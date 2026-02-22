@@ -266,23 +266,7 @@ section{margin-top:48px}
 .cl svg{width:15px;height:15px;flex-shrink:0}
 @media(max-width:680px){.contact-card{padding:32px 16px}.ct-links{gap:7px}.cl{font-size:11.5px;padding:8px 14px}}
 
-/* ─── WATERMARK / PARA TEXT ─── */
-.para-text{
-  font-family:'Syne',sans-serif;
-  font-size:clamp(48px,8.5vw,96px);
-  font-weight:800;
-  color:rgba(255,255,255,.022);
-  letter-spacing:.06em;
-  text-align:center;
-  width:100%;
-  display:block;
-  margin:40px 0 -14px;
-  user-select:none;pointer-events:none;
-  will-change:transform;
-  overflow:visible;
-  position:relative;
-  white-space:nowrap;
-}
+.para-text{display:none}
 
 footer{text-align:center;padding:44px 0 0;font-size:11.5px;color:rgba(232,237,245,.18)}
 </style>
@@ -331,6 +315,10 @@ footer{text-align:center;padding:44px 0 0;font-size:11.5px;color:rgba(232,237,24
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.1 3.38 2 2 0 0 1 3.09 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
         Get in Touch
       </a>
+      <a href="#" class="btn btn-g" download>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download CV
+      </a>
     </div>
     <div class="hero-links">
       <a href="tel:8109428708" class="cpill">
@@ -369,8 +357,8 @@ footer{text-align:center;padding:44px 0 0;font-size:11.5px;color:rgba(232,237,24
         <div class="stat-l">Certifications</div>
       </div>
       <div class="g stat-card rev d4">
-        <div class="stat-n">8.88</div>
-        <div class="stat-l">B.Tech CGPA</div>
+        <div class="stat-n">⭐</div>
+        <div class="stat-l">Star Award Winner</div>
       </div>
     </div>
   </div>
@@ -647,7 +635,15 @@ footer{text-align:center;padding:44px 0 0;font-size:11.5px;color:rgba(232,237,24
   </div>
 </section>
 
-<footer>© 2026 Piyush Gupta · Data Engineer · Accenture, Pune</footer>
+<footer>
+  <div style="max-width:620px;margin:0 auto;padding:0 20px">
+    <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:14px 22px;margin-bottom:20px">
+      <span style="font-size:18px">🤖</span>
+      <span style="font-size:12.5px;color:rgba(232,237,245,0.45);line-height:1.6;text-align:left"><strong style="color:rgba(232,237,245,0.65);font-weight:500">Fun Fact:</strong> This website was completely made with the help of AI — so yeah, I'm pretty good at prompting too 😄</span>
+    </div>
+    <div style="font-size:11px;color:rgba(232,237,245,0.18);padding-bottom:40px">© 2026 Piyush Gupta · Data Engineer · Accenture, Pune</div>
+  </div>
+</footer>
 </main>
 
 <script>
@@ -734,7 +730,7 @@ const eo=new IntersectionObserver(entries=>{
 },{threshold:.1});
 document.querySelectorAll('.exp-item').forEach(el=>eo.observe(el));
 
-/* PARALLAX WATERMARK — gentle centered drift */
+/* PARALLAX WATERMARK */
 window.addEventListener('scroll',()=>{
   document.querySelectorAll('.para-text').forEach(el=>{
     const rect=el.getBoundingClientRect();
