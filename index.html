@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Piyush Gupta — Data Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -62,12 +62,47 @@ section{margin-top:48px}
 .rev.on{opacity:1;transform:translateY(0)}
 .d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}.d4{transition-delay:.28s}
 
-/* ─── SECTION HEADINGS ─── */
-.sh{display:flex;align-items:center;gap:12px;margin-bottom:22px}
-.sh-bar{width:3px;height:28px;border-radius:3px;background:linear-gradient(180deg,var(--accent),var(--accent2));flex-shrink:0}
-.sh-inner{display:flex;flex-direction:column;gap:2px}
-.sh-sup{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:500}
-.sh-title{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--text);letter-spacing:-.02em;line-height:1}
+/* ─── SECTION HEADINGS — cinematic redesign ─── */
+.sh{
+  display:flex;flex-direction:column;
+  gap:0;margin-bottom:28px;
+  position:relative;padding-left:0;
+}
+.sh-sup{
+  font-family:'Inter',sans-serif;
+  font-size:10px;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--accent);font-weight:500;
+  margin-bottom:6px;
+  display:flex;align-items:center;gap:8px;
+}
+.sh-sup::before{
+  content:'';display:inline-block;
+  width:22px;height:1px;
+  background:linear-gradient(90deg,var(--accent),transparent);
+}
+.sh-sup::after{
+  content:'';display:inline-block;
+  width:22px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--accent));
+}
+.sh-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(38px,6vw,62px);
+  font-weight:400;
+  color:var(--text);
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  line-height:.95;
+  position:relative;
+}
+.sh-title::after{
+  content:'';display:block;
+  width:48px;height:2px;margin-top:10px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2),transparent);
+  border-radius:2px;
+}
+/* Remove the old bar div */
+.sh-bar{display:none}
 
 /* ─── HERO ─── */
 #hero{min-height:100vh;display:flex;align-items:center;padding-top:80px}
@@ -80,7 +115,7 @@ section{margin-top:48px}
 .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pd 2s infinite;box-shadow:0 0 8px var(--accent)}
 @keyframes pd{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.65)}}
 
-.hero-name{font-family:'Syne',sans-serif;font-size:clamp(36px,7vw,68px);font-weight:800;line-height:1.04;letter-spacing:-.025em;background:linear-gradient(130deg,#e8edf5 20%,#64b4ff 55%,#a78bfa 85%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
+.hero-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(58px,10vw,108px);font-weight:400;line-height:.95;letter-spacing:.12em;text-transform:uppercase;font-style:normal;background:linear-gradient(130deg,#e8edf5 20%,#64b4ff 55%,#a78bfa 85%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
 .hero-role{font-size:16px;color:var(--accent2);font-weight:400;margin-bottom:22px;letter-spacing:.01em}
 .hero-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:30px}
 .tag{font-size:11.5px;padding:4px 13px;border-radius:30px;background:rgba(100,180,255,.08);border:1px solid rgba(100,180,255,.2);color:var(--accent);font-weight:500}
@@ -97,15 +132,11 @@ section{margin-top:48px}
 .cpill:hover{color:var(--accent)}
 .cpill svg{width:13px;height:13px;flex-shrink:0}
 
-/* STATS: 4 cards */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:24px}
-.stat-card{padding:18px 10px;text-align:center}
-.stat-n{font-family:'Syne',sans-serif;font-size:21px;font-weight:800;color:var(--accent);line-height:1}
-.stat-l{font-size:10px;color:var(--muted);margin-top:5px;line-height:1.4}
-@media(max-width:680px){
-  .stats{grid-template-columns:repeat(2,1fr);gap:8px}
-  .stat-n{font-size:18px}
-}
+/* STATS: single tile */
+.stats{display:flex;margin-top:24px}
+.stat-card{padding:18px 28px;text-align:center}
+.stat-n{font-family:'Bebas Neue',sans-serif;font-size:28px;font-weight:300;font-style:italic;color:var(--accent);line-height:1}
+.stat-l{font-size:10px;color:var(--muted);margin-top:5px;line-height:1.4;font-family:'Inter',sans-serif;letter-spacing:.06em;text-transform:uppercase}
 
 /* ─── MARQUEE ─── */
 #tech-strip{overflow:hidden;padding:18px 0;position:relative;margin-top:28px}
@@ -205,7 +236,7 @@ section{margin-top:48px}
 .proj-card:hover{border-color:rgba(100,180,255,.3);box-shadow:0 8px 38px rgba(100,180,255,.08)}
 .proj-hdr{display:flex;align-items:center;gap:9px;margin-bottom:9px}
 .proj-ico{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,rgba(59,130,246,.2),rgba(109,40,217,.2));display:flex;align-items:center;justify-content:center;font-size:15px;border:1px solid rgba(100,180,255,.18);flex-shrink:0}
-.proj-name{font-family:'Syne',sans-serif;font-size:15px;font-weight:700}
+.proj-name{font-family:'Inter',sans-serif;font-size:15px;font-weight:600}
 .proj-meta{font-size:11px;color:var(--muted);margin-bottom:7px}
 .proj-desc{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:12px}
 .proj-tags{display:flex;flex-wrap:wrap;gap:5px}
@@ -232,7 +263,7 @@ section{margin-top:48px}
 .aw-txt strong{color:var(--text);font-weight:500}
 
 /* ─── EDUCATION — linked cards ─── */
-.edu-linked{display:flex;flex-direction:column;gap:0}
+
 .edu-card{padding:24px 30px;display:flex;align-items:flex-start;gap:16px;position:relative}
 .edu-card:hover{border-color:rgba(100,180,255,.25);box-shadow:0 8px 30px rgba(100,180,255,.07)}
 
@@ -243,7 +274,7 @@ section{margin-top:48px}
 .edu-sep{height:1px;background:linear-gradient(90deg,transparent,rgba(100,180,255,.3),transparent);margin:0}
 
 .edu-ico{font-size:26px;flex-shrink:0;margin-top:2px}
-.edu-deg{font-family:'Syne',sans-serif;font-size:14.5px;font-weight:700;margin-bottom:2px}
+.edu-deg{font-family:'Inter',sans-serif;font-size:14.5px;font-weight:600;margin-bottom:2px}
 .edu-school{font-size:13px;color:var(--accent);font-weight:500;margin-bottom:3px}
 .edu-meta{font-size:11px;color:var(--muted);margin-bottom:10px}
 .edu-badge{display:inline-flex;align-items:center;gap:5px;border-radius:20px;padding:3px 12px;font-size:11.5px;font-weight:600}
@@ -258,13 +289,35 @@ section{margin-top:48px}
 .contact-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(100,180,255,.5),transparent)}
 .contact-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(167,139,250,.4),transparent)}
 .cglow{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 100%,rgba(100,180,255,.05),transparent 70%);pointer-events:none}
-.ct-title{font-family:'Syne',sans-serif;font-size:26px;font-weight:800;margin-bottom:8px}
+.ct-title{font-family:'Bebas Neue',sans-serif;font-size:36px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
 .ct-sub{font-size:14px;color:var(--muted);margin-bottom:26px}
 .ct-links{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
 .cl{display:flex;align-items:center;gap:7px;padding:10px 20px;border-radius:30px;background:var(--glass);border:1px solid var(--glass-b);color:var(--text);text-decoration:none;font-size:13px;font-weight:500;transition:all .25s;cursor:none}
 .cl:hover{border-color:rgba(100,180,255,.3);background:rgba(100,180,255,.08);color:var(--accent);transform:translateY(-2px)}
 .cl svg{width:15px;height:15px;flex-shrink:0}
 @media(max-width:680px){.contact-card{padding:32px 16px}.ct-links{gap:7px}.cl{font-size:11.5px;padding:8px 14px}}
+
+
+/* ─── EDUCATION — timeline ─── */
+.edu-wrap{display:flex;flex-direction:column}
+.edu-item{opacity:0;transform:translateX(-36px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.edu-item.on{opacity:1;transform:translateX(0)}
+.edu-conn{width:2px;height:24px;background:linear-gradient(180deg,rgba(100,180,255,.4),rgba(100,180,255,.06));margin:0 0 4px 28px}
+.edu-card{padding:28px 32px;position:relative;overflow:hidden}
+.edu-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(100,180,255,.5),transparent);opacity:0;transition:opacity .3s}
+.edu-card:hover::before{opacity:1}
+.edu-card:hover{border-color:rgba(100,180,255,.25);box-shadow:0 12px 50px rgba(100,180,255,.09);background:var(--glass-h)}
+.edu-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:14px}
+.edu-left{display:flex;flex-direction:column;gap:6px}
+.edu-deg{font-family:'Inter',sans-serif;font-size:16.5px;font-weight:500;color:var(--text);letter-spacing:-.01em;line-height:1.2}
+.edu-meta-row{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.edu-co{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:500;color:var(--accent);background:rgba(100,180,255,.08);border:1px solid rgba(100,180,255,.18);border-radius:20px;padding:2px 11px;white-space:nowrap}
+.edu-right{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0}
+.edu-date{font-size:11px;color:var(--muted);background:rgba(255,255,255,.04);border:1px solid var(--glass-b);border-radius:20px;padding:3px 11px;white-space:nowrap}
+.edu-loc{font-size:10.5px;color:var(--muted)}
+.edu-badge{display:inline-flex;align-items:center;gap:5px;border-radius:20px;padding:3px 12px;font-size:11.5px;font-weight:600}
+.eb-green{background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.22);color:var(--accent3)}
+@media(max-width:680px){.edu-card{padding:20px 16px}.edu-top{flex-direction:column;gap:10px}.edu-right{align-items:flex-start}}
 
 .para-text{display:none}
 
@@ -296,7 +349,7 @@ footer{text-align:center;padding:44px 0 0;font-size:11.5px;color:rgba(232,237,24
 <section id="hero">
   <div class="g hero-card rev">
     <div class="eyebrow"><span class="dot"></span> Open to opportunities</div>
-    <h1 class="hero-name">Piyush Gupta</h1>
+    <h1 class="hero-name">PIYUSH GUPTA</h1>
     <div class="hero-role">Data Engineer</div>
     <div class="hero-tags">
       <span class="tag">PL/SQL</span>
@@ -325,9 +378,9 @@ footer{text-align:center;padding:44px 0 0;font-size:11.5px;color:rgba(232,237,24
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.1 3.38 2 2 0 0 1 3.09 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16z"/></svg>
         +91 81094 28708
       </a>
-      <a href="mailto:gpa.piyush@gmail.com" class="cpill">
+      <a href="/cdn-cgi/l/email-protection#baddcadb94cad3c3cfc9d2faddd7dbd3d694d9d5d7" class="cpill">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
-        gpa.piyush@gmail.com
+        <span class="__cf_email__" data-cfemail="d6b1a6b7f8a6bfafa3a5be96b1bbb7bfbaf8b5b9bb">[email&#160;protected]</span>
       </a>
       <a href="https://linkedin.com" class="cpill">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
@@ -348,18 +401,6 @@ footer{text-align:center;padding:44px 0 0;font-size:11.5px;color:rgba(232,237,24
         <div class="stat-n">2+</div>
         <div class="stat-l">Years of Experience</div>
       </div>
-      <div class="g stat-card rev d2">
-        <div class="stat-n" style="font-size:15px;padding-top:3px">Millions</div>
-        <div class="stat-l">Records / Day</div>
-      </div>
-      <div class="g stat-card rev d3">
-        <div class="stat-n">4</div>
-        <div class="stat-l">Certifications</div>
-      </div>
-      <div class="g stat-card rev d4">
-        <div class="stat-n">⭐</div>
-        <div class="stat-l">Star Award Winner</div>
-      </div>
     </div>
   </div>
 </section>
@@ -374,7 +415,7 @@ footer{text-align:center;padding:44px 0 0;font-size:11.5px;color:rgba(232,237,24
     <div class="sh-bar"></div>
     <div class="sh-inner">
       <span class="sh-sup">Who I Am</span>
-      <span class="sh-title">About</span>
+      <span class="sh-title">ABOUT</span>
     </div>
   </div>
   <div class="g about-p rev">
@@ -388,7 +429,7 @@ footer{text-align:center;padding:44px 0 0;font-size:11.5px;color:rgba(232,237,24
     <div class="sh-bar"></div>
     <div class="sh-inner">
       <span class="sh-sup">Tools &amp; Technologies</span>
-      <span class="sh-title">Tech Stack</span>
+      <span class="sh-title">TECH STACK</span>
     </div>
   </div>
   <div class="sg-grid">
@@ -422,7 +463,7 @@ footer{text-align:center;padding:44px 0 0;font-size:11.5px;color:rgba(232,237,24
     <div class="sh-bar"></div>
     <div class="sh-inner">
       <span class="sh-sup">Primary Platforms</span>
-      <span class="sh-title">Core Technologies</span>
+      <span class="sh-title">CORE TECHNOLOGIES</span>
     </div>
   </div>
   <div class="lg-grid">
@@ -448,7 +489,7 @@ footer{text-align:center;padding:44px 0 0;font-size:11.5px;color:rgba(232,237,24
     <div class="sh-bar"></div>
     <div class="sh-inner">
       <span class="sh-sup">What I've Built</span>
-      <span class="sh-title">Projects</span>
+      <span class="sh-title">PROJECTS</span>
     </div>
   </div>
   <div class="proj-grid">
@@ -478,7 +519,7 @@ footer{text-align:center;padding:44px 0 0;font-size:11.5px;color:rgba(232,237,24
     <div class="sh-bar"></div>
     <div class="sh-inner">
       <span class="sh-sup">Career Timeline</span>
-      <span class="sh-title">Experience</span>
+      <span class="sh-title">EXPERIENCE</span>
     </div>
   </div>
 
@@ -505,10 +546,10 @@ footer{text-align:center;padding:44px 0 0;font-size:11.5px;color:rgba(232,237,24
         </div>
         <div class="exp-div"></div>
         <ul class="exp-ul">
-          <li>Developed PL/SQL scripts processing <strong>millions of records daily</strong> for a European banking client, implementing complex business logic for contracts and account operations.</li>
+          <li>Developed PL/SQL scripts processing millions of records daily for a European banking client, implementing complex business logic for contracts and account operations.</li>
           <li>Delivered end-to-end data integration and transformation solutions, improving dataset accuracy and consistency across critical warehouse tables.</li>
           <li>Implemented enterprise-grade PL/SQL solutions based on functional requirement documents, ensuring alignment with business rules and operational standards.</li>
-          <li>Managed production deployments, version control, and release management using <strong>Jenkins, Cloudbees, and Bitbucket</strong>, enabling reliable delivery of data assets.</li>
+          <li>Managed production deployments, version control, and release management using Jenkins, Cloudbees, and Bitbucket, enabling reliable delivery of data assets.</li>
           <li>Supported Data Warehouse development by implementing schema changes, validating transformations, and ensuring alignment with business and regulatory requirements.</li>
         </ul>
         <div class="exp-tags">
@@ -540,7 +581,7 @@ footer{text-align:center;padding:44px 0 0;font-size:11.5px;color:rgba(232,237,24
         </div>
         <div class="exp-div"></div>
         <ul class="exp-ul">
-          <li>Participated in intensive practical training, honing expertise in <strong>C and Modern C++</strong> programming languages in an automotive technology environment.</li>
+          <li>Participated in intensive practical training, honing expertise in C and Modern C++ programming languages in an automotive technology environment.</li>
           <li>Enhanced project success through precise test case creation and execution, meeting customer needs for top-notch product quality.</li>
         </ul>
         <div class="exp-tags">
@@ -557,7 +598,7 @@ footer{text-align:center;padding:44px 0 0;font-size:11.5px;color:rgba(232,237,24
     <div class="sh-bar"></div>
     <div class="sh-inner">
       <span class="sh-sup">Verified Credentials</span>
-      <span class="sh-title">Certifications</span>
+      <span class="sh-title">CERTIFICATIONS</span>
     </div>
   </div>
   <div class="cert-grid">
@@ -571,40 +612,66 @@ footer{text-align:center;padding:44px 0 0;font-size:11.5px;color:rgba(232,237,24
     <div class="sh-bar"></div>
     <div class="sh-inner">
       <span class="sh-sup">Recognition</span>
-      <span class="sh-title">Awards</span>
+      <span class="sh-title">AWARDS</span>
     </div>
   </div>
   <div class="aw-wrap">
-    <div class="g aw-card rev d1"><div class="aw-ico">⭐</div><div class="aw-txt"><strong>Star Award — Accenture Client</strong><br>Recipient of the Star Award from client for exceptional performance and commitment to excellence in delivery.</div></div>
-    <div class="g aw-card rev d2"><div class="aw-ico">🏆</div><div class="aw-txt"><strong>CBSE Merit Certificate &amp; Marker Cup — Top 0.1% Nationwide</strong><br>Recognised among the top 0.1% nationwide for scoring 100% in Informatics Practices (AISSCE 2019).</div></div>
+    <div class="g aw-card rev d1"><div class="aw-ico">⭐</div><div class="aw-txt">Star Award — Accenture Client<br>Recipient of the Star Award from client for exceptional performance and commitment to excellence in delivery.</div></div>
+    <div class="g aw-card rev d2"><div class="aw-ico">🏆</div><div class="aw-txt">CBSE Merit Certificate &amp; Marker Cup — Top 0.1% Nationwide<br>Recognised among the top 0.1% nationwide for scoring 100% in Informatics Practices (AISSCE 2019).</div></div>
   </div>
 
   <div class="sh rev" style="margin-top:36px">
     <div class="sh-bar"></div>
     <div class="sh-inner">
       <span class="sh-sup">Academic Background</span>
-      <span class="sh-title">Education</span>
+      <span class="sh-title">EDUCATION</span>
     </div>
   </div>
 
-  <!-- Linked education cards -->
-  <div class="edu-linked rev">
-    <div class="g edu-card">
-      <div class="edu-ico">🎓</div>
-      <div>
-        <div class="edu-deg">Bachelor of Technology</div>
-        <div class="edu-school">Lakshmi Narain College of Technology (LNCT)</div>
-        <div class="edu-meta">2019 – 2023 · Bhopal, India</div>
+  <!-- Education timeline -->
+  <div class="edu-wrap">
+    <div class="edu-item" id="edu-1">
+      <div class="g edu-card">
+        <div class="edu-top">
+          <div class="edu-left">
+            <div class="edu-deg">Bachelor of Technology</div>
+            <div class="edu-meta-row">
+              <div class="edu-co">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                Lakshmi Narain College of Technology (LNCT)
+              </div>
+            </div>
+          </div>
+          <div class="edu-right">
+            <div class="edu-date">2019 — 2023</div>
+            <div class="edu-loc">📍 Bhopal, India</div>
+          </div>
+        </div>
+        <div class="exp-div"></div>
         <div class="edu-badge eb-green">🎯 CGPA: 8.88 / 10</div>
       </div>
     </div>
-    <div class="edu-sep"></div>
-    <div class="g edu-card">
-      <div class="edu-ico">🏫</div>
-      <div>
-        <div class="edu-deg">Senior Secondary (Class XII)</div>
-        <div class="edu-school">Delhi Public School (DPS), Bhopal</div>
-        <div class="edu-meta">Passed 2019 · Bhopal, India</div>
+
+    <div class="edu-conn"></div>
+
+    <div class="edu-item" id="edu-2">
+      <div class="g edu-card">
+        <div class="edu-top">
+          <div class="edu-left">
+            <div class="edu-deg">Senior Secondary (Class XII)</div>
+            <div class="edu-meta-row">
+              <div class="edu-co">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                Delhi Public School (DPS), Bhopal
+              </div>
+            </div>
+          </div>
+          <div class="edu-right">
+            <div class="edu-date">Passed 2019</div>
+            <div class="edu-loc">📍 Bhopal, India</div>
+          </div>
+        </div>
+        <div class="exp-div"></div>
         <div class="edu-badge eb-green">🎯 Percentage: 83%</div>
       </div>
     </div>
@@ -618,15 +685,15 @@ footer{text-align:center;padding:44px 0 0;font-size:11.5px;color:rgba(232,237,24
     <div class="sh-bar"></div>
     <div class="sh-inner">
       <span class="sh-sup">Get in Touch</span>
-      <span class="sh-title">Contact</span>
+      <span class="sh-title">CONTACT</span>
     </div>
   </div>
   <div class="g contact-card rev">
     <div class="cglow"></div>
-    <div class="ct-title">Let's build something great.</div>
+    <div class="ct-title">LET'S BUILD SOMETHING GREAT.</div>
     <p class="ct-sub">Open to data engineering roles, PL/SQL projects, and interesting data challenges.</p>
     <div class="ct-links">
-      <a href="mailto:gpa.piyush@gmail.com" class="cl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>Email</a>
+      <a href="/cdn-cgi/l/email-protection#b9dec9d897c9d0c0cccad1f9ded4d8d0d597dad6d4" class="cl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>Email</a>
       <a href="https://linkedin.com" class="cl"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
       <a href="https://github.com" class="cl"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>GitHub</a>
       <a href="https://leetcode.com" class="cl"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0z"/></svg>LeetCode</a>
@@ -636,12 +703,8 @@ footer{text-align:center;padding:44px 0 0;font-size:11.5px;color:rgba(232,237,24
 </section>
 
 <footer>
-  <div style="max-width:620px;margin:0 auto;padding:0 20px">
-    <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:14px 22px;margin-bottom:20px">
-      <span style="font-size:18px">🤖</span>
-      <span style="font-size:12.5px;color:rgba(232,237,245,0.45);line-height:1.6;text-align:left"><strong style="color:rgba(232,237,245,0.65);font-weight:500">Fun Fact:</strong> This website was completely made with the help of AI — so yeah, I'm pretty good at prompting too 😄</span>
-    </div>
-    <div style="font-size:11px;color:rgba(232,237,245,0.18);padding-bottom:40px">© 2026 Piyush Gupta · Data Engineer · Accenture, Pune</div>
+  <div style="text-align:center;padding:40px 0 0;font-size:11px;color:rgba(232,237,245,0.18)">
+    © 2026 Piyush Gupta · Data Engineer · Accenture, Pune
   </div>
 </footer>
 </main>
@@ -723,6 +786,12 @@ const ro=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');ro.unobserve(e.target)}});
 },{threshold:.07});
 document.querySelectorAll('.rev').forEach(el=>ro.observe(el));
+
+/* EDUCATION SLIDE-IN */
+const edo=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');edo.unobserve(e.target)}});
+},{threshold:.1});
+document.querySelectorAll('.edu-item').forEach(el=>edo.observe(el));
 
 /* EXPERIENCE SLIDE-IN */
 const eo=new IntersectionObserver(entries=>{
