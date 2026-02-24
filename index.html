@@ -56,11 +56,11 @@ section{margin-top:36px}
 .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pd 2s infinite;box-shadow:0 0 8px var(--accent)}
 @keyframes pd{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.65)}}
 .hero-name{font-family:'Inter',sans-serif;font-size:clamp(36px,7vw,72px);font-weight:300;line-height:1;letter-spacing:.22em;text-transform:uppercase;background:linear-gradient(130deg,#e8edf5 20%,#64b4ff 55%,#a78bfa 85%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:10px}
-.hero-role-wrap{display:flex;align-items:center;gap:16px;margin-bottom:22px;flex-wrap:wrap}
+.hero-role-wrap{display:flex;flex-direction:row;align-items:center;gap:10px;margin-bottom:22px;flex-wrap:wrap}
 .hero-role{font-size:12px;color:var(--accent2);font-weight:400;letter-spacing:.08em;text-transform:uppercase}
-.hero-yoe{display:inline-flex;align-items:center;gap:3px;padding:3px 12px 3px 3px;border-radius:30px;border:1px solid rgba(100,180,255,.18);background:rgba(100,180,255,.05)}
-.yoe-num{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:.06em;line-height:1;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;padding:2px 7px}
-.yoe-label{font-size:10.5px;font-weight:500;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.hero-yoe{display:inline-flex;align-items:center;gap:0;padding:4px 11px;border-radius:8px;background:rgba(100,180,255,.06);border:1px solid rgba(100,180,255,.16)}
+.yoe-num{font-family:'Bebas Neue',sans-serif;font-size:14px;letter-spacing:.06em;line-height:1;color:var(--accent);margin-right:4px}
+.yoe-label{font-size:11px;font-weight:400;color:var(--muted);letter-spacing:.02em}
 .hero-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:30px}
 .tag{font-size:11.5px;padding:4px 13px;border-radius:30px;background:rgba(100,180,255,.08);border:1px solid rgba(100,180,255,.2);color:var(--accent);font-weight:500}
 .hero-cta{display:flex;gap:10px;flex-wrap:wrap}
@@ -127,8 +127,8 @@ section{margin-top:36px}
 .exp-co{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:500;color:var(--accent);background:rgba(100,180,255,.08);border:1px solid rgba(100,180,255,.18);border-radius:20px;padding:2px 11px;white-space:nowrap}
 .exp-badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:600;letter-spacing:.04em;border-radius:20px;padding:2px 9px;white-space:nowrap}
 .eb-cur{background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.28);color:var(--accent3)}
-.eb-ft{background:rgba(100,180,255,.08);border:1px solid rgba(100,180,255,.22);color:var(--accent)}
-.eb-int{background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.28);color:var(--accent2)}
+.eb-ft{background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.28);color:#38bdf8}
+.eb-int{background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.28);color:#38bdf8}
 .bdot{width:5px;height:5px;border-radius:50%;animation:pd 2s infinite;flex-shrink:0}
 .bdot-g{background:var(--accent3)}.bdot-p{background:var(--accent2)}
 .exp-right{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0}
@@ -158,15 +158,20 @@ section{margin-top:36px}
 @media(max-width:680px){.proj-card{grid-template-columns:1fr}}
 
 /* CERTS */
-.cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
-.cert-card{padding:18px 20px;display:flex;align-items:flex-start;gap:11px;cursor:none;position:relative}
-.cert-card:hover{border-color:rgba(52,211,153,.35);box-shadow:0 8px 30px rgba(52,211,153,.08)}
+.cert-grid{display:grid;grid-template-columns:1fr;gap:10px}
+.cert-card{
+  padding:18px 20px;display:flex;align-items:flex-start;gap:11px;cursor:none;position:relative;
+  opacity:0;transform:translateX(-24px);
+  transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1),border-color .3s,box-shadow .3s;
+}
+.cert-card.on{opacity:1;transform:translateX(0)}
+.cert-card:hover{border-color:rgba(52,211,153,.45);box-shadow:0 8px 32px rgba(52,211,153,.12);transform:translateX(4px)}
 .cert-ico{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.2)}
 .cert-name{font-size:12.5px;font-weight:500;color:var(--text);line-height:1.45;margin-bottom:2px}
 .cert-iss{font-size:10.5px;color:var(--muted)}
 .cert-arr{position:absolute;top:12px;right:14px;color:var(--muted);font-size:13px;text-decoration:none;transition:all .22s;opacity:.5;line-height:1}
 .cert-card:hover .cert-arr{color:var(--accent);opacity:1;transform:translate(2px,-2px)}
-@media(max-width:680px){.cert-grid{grid-template-columns:1fr}}
+
 
 /* AWARDS */
 .aw-wrap{display:flex;flex-direction:column;gap:10px}
@@ -233,7 +238,7 @@ footer{text-align:center;padding:44px 0 40px;font-size:11px;color:rgba(232,237,2
     <div class="hero-role-wrap">
       <div class="hero-role">Data Engineer</div>
       <div class="hero-yoe">
-        <span class="yoe-num">2+</span><span class="yoe-div"></span><span class="yoe-label">Years of Experience</span>
+        <span class="yoe-num">2+</span><span class="yoe-label">Years of Experience</span>
       </div>
     </div>
     <div class="hero-tags">
@@ -317,8 +322,8 @@ footer{text-align:center;padding:44px 0 40px;font-size:11px;color:rgba(232,237,2
             <div class="exp-role">Associate Software Engineer</div>
             <div class="exp-meta">
               <div class="exp-co"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>Accenture</div>
-              <div class="exp-badge eb-cur"><span class="bdot bdot-g"></span> Current</div>
               <div class="exp-badge eb-ft">💼 Full-Time</div>
+              <div class="exp-badge eb-cur"><span class="bdot bdot-g"></span> Current</div>
             </div>
           </div>
           <div class="exp-right"><div class="exp-date">Apr 2024 — Present</div><div class="exp-loc">📍 Pune, India</div></div>
@@ -342,7 +347,7 @@ footer{text-align:center;padding:44px 0 40px;font-size:11px;color:rgba(232,237,2
             <div class="exp-role">Software Engineer Intern</div>
             <div class="exp-meta">
               <div class="exp-co"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>KPIT Technologies</div>
-              <div class="exp-badge eb-int"><span class="bdot bdot-p"></span> Internship</div>
+              <div class="exp-badge eb-int">💼 Internship</div>
             </div>
           </div>
           <div class="exp-right"><div class="exp-date">Nov 2023 — Mar 2024</div><div class="exp-loc">📍 Pune, India</div></div>
@@ -476,7 +481,9 @@ var eo=new IntersectionObserver(function(entries){entries.forEach(function(e){if
 document.querySelectorAll('.exp-item').forEach(function(el){eo.observe(el)});
 var edo=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');edo.unobserve(e.target)}})},{threshold:.01,rootMargin:'0px 0px 100px 0px'});
 document.querySelectorAll('.edu-item').forEach(function(el){edo.observe(el)});
-setTimeout(function(){document.querySelectorAll('.rev,.exp-item,.edu-item').forEach(function(el){el.classList.add('on')})},600);
+var co=new IntersectionObserver(function(entries){entries.forEach(function(e,i){if(e.isIntersecting){setTimeout(function(){e.target.classList.add('on')},i*80);co.unobserve(e.target)}})},{threshold:.05,rootMargin:'0px 0px 60px 0px'});
+document.querySelectorAll('.cert-card').forEach(function(el){co.observe(el)});
+setTimeout(function(){document.querySelectorAll('.rev,.exp-item,.edu-item,.cert-card').forEach(function(el){el.classList.add('on')})},600);
 })();
 </script>
 </body>
