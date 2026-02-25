@@ -74,22 +74,6 @@ section{margin-top:36px}
 .btn-cv{background:var(--glass);border:1px solid rgba(100,180,255,.38);color:var(--accent);animation:cv-glow 2.8s ease-in-out infinite}
 .btn-cv:hover{background:rgba(100,180,255,.1);border-color:rgba(100,180,255,.65);transform:translateY(-2px)}
 
-
-
-
-
-/* MARQUEE */
-#tech-strip{overflow:hidden;padding:18px 0;position:relative;margin-top:16px}
-#tech-strip::before,#tech-strip::after{content:'';position:absolute;top:0;bottom:0;width:70px;z-index:2;pointer-events:none}
-#tech-strip::before{left:0;background:linear-gradient(to right,var(--bg),transparent)}
-#tech-strip::after{right:0;background:linear-gradient(to left,var(--bg),transparent)}
-.mq-track{display:flex;gap:10px;width:max-content;animation:mq 38s linear infinite}
-.mq-track:hover{animation-play-state:paused}
-.tl{display:flex;align-items:center;gap:8px;padding:8px 16px;border-radius:10px;background:var(--glass);border:1px solid var(--glass-b);white-space:nowrap;flex-shrink:0;transition:border-color .3s,transform .25s;cursor:none}
-.tl:hover{transform:translateY(-3px);background:var(--glass-h)}
-.tl .ti{font-size:15px}.tl .tn{font-size:11.5px;font-weight:500;color:var(--text)}
-@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
 /* ABOUT */
 .about-p{padding:30px 36px;font-size:14.5px;color:var(--muted);line-height:1.85}
 .hl{color:var(--accent);font-weight:500}.hl2{color:var(--accent2);font-weight:500}
@@ -101,7 +85,6 @@ section{margin-top:36px}
 .sg-title{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);margin-bottom:12px}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
 .chip{font-size:11.5px;padding:4px 11px;border-radius:7px;background:rgba(255,255,255,.04);border:1px solid var(--glass-b);color:var(--text);cursor:none}
-
 @media(max-width:680px){.sg-grid{grid-template-columns:1fr}}
 .lg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}
 .lc{padding:18px 12px;display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center;cursor:none;transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s ease}
@@ -173,7 +156,6 @@ section{margin-top:36px}
 .cert-arr{position:absolute;top:12px;right:14px;color:var(--muted);font-size:13px;text-decoration:none;transition:all .22s;opacity:.5;line-height:1}
 .cert-card:hover .cert-arr{color:var(--accent);opacity:1;transform:translate(2px,-2px)}
 
-
 /* AWARDS */
 .aw-wrap{display:flex;flex-direction:column;gap:10px}
 .aw-card{padding:20px 26px;display:flex;align-items:flex-start;gap:13px;position:relative;transition:border-color .4s ease,box-shadow .4s ease,transform .4s cubic-bezier(.22,1,.36,1)}
@@ -220,77 +202,38 @@ section{margin-top:36px}
 footer{text-align:center;padding:44px 0 40px;font-size:11px;color:rgba(232,237,245,.18)}
 
 /* ══ ENHANCED GLOBAL ANIMATIONS ══ */
-
-/* Staggered section heading reveal */
 .sh-sup{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease}
 .sh-sup.on{opacity:1;transform:translateY(0)}
 .sh-title{opacity:0;transform:translateY(14px);transition:opacity .55s ease .08s,transform .55s ease .08s}
 .sh-title.on{opacity:1;transform:translateY(0)}
-
-/* Tag chips in hero — pop in */
 .tag{transition:background .25s,border-color .25s}
-
-/* Marquee tiles */
-.tl{transition:border-color .3s,background .3s}
-
-/* About card text fade-in on scroll */
 .about-p{transition:border-color .4s,box-shadow .4s,transform .4s cubic-bezier(.22,1,.36,1)}
 .about-p:hover{transform:translateY(-2px);box-shadow:0 10px 40px rgba(100,180,255,.07)}
-
-/* Skill group cards */
 .sg{transition:border-color .4s ease,background .4s ease,box-shadow .4s ease,transform .4s cubic-bezier(.22,1,.36,1)}
 .sg:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(167,139,250,.1);border-color:rgba(167,139,250,.3)}
-
-
-
-/* Exp tags */
 .exp-tag{transition:background .25s}
-
-/* Project arrow spin on hover */
 .proj-arr{transition:color .3s,transform .4s cubic-bezier(.22,1,.36,1)}
 .proj-card:hover .proj-arr{transform:translate(4px,-4px) rotate(8deg)}
-
-
-
 .aw-ico{display:inline-block}
-
-
-
-/* Contact card lift */
 .contact-card{transition:border-color .4s,box-shadow .4s,transform .4s cubic-bezier(.22,1,.36,1)}
 .contact-card:hover{transform:translateY(-3px);box-shadow:0 16px 56px rgba(100,180,255,.1)}
-
-/* Hero card glow pulse */
 @keyframes hero-pulse{
   0%,100%{box-shadow:0 0 0 1px rgba(100,180,255,.08),0 24px 64px rgba(0,0,0,.4)}
   50%{box-shadow:0 0 0 1px rgba(100,180,255,.18),0 24px 64px rgba(100,180,255,.08)}
 }
 .hero-card{animation:hero-pulse 5s ease-in-out infinite}
-
-/* CTA button active press */
 .btn:active{transform:scale(.97) translateY(1px)!important}
-
-/* Nav pill hover lift */
 nav a{position:relative}
 nav a::after{content:'';position:absolute;bottom:3px;left:50%;transform:translateX(-50%) scaleX(0);width:12px;height:1.5px;background:var(--accent);border-radius:2px;transition:transform .3s cubic-bezier(.22,1,.36,1)}
 nav a:hover::after,nav a.active::after{transform:translateX(-50%) scaleX(1)}
-
-/* Section-level stagger for sg (skill group) children */
 .sg-grid .sg:nth-child(1){transition-delay:.04s}
 .sg-grid .sg:nth-child(2){transition-delay:.08s}
 .sg-grid .sg:nth-child(3){transition-delay:.12s}
 .sg-grid .sg:nth-child(4){transition-delay:.16s}
 .sg-grid .sg:nth-child(5){transition-delay:.20s}
 .sg-grid .sg:nth-child(6){transition-delay:.24s}
-
-
-
 .ln{transition:color .3s}
-
-/* Smooth orb drift */
 .orb{transition:opacity 1s}
-
-
 </style>
 </head>
 <body>
@@ -299,8 +242,9 @@ nav a:hover::after,nav a.active::after{transform:translateX(-50%) scaleX(1)}
 <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
 
 <nav id="navbar">
-  <a href="#hero">Home</a><a href="#about">About</a><a href="#stack">Stack</a>
-  <a href="#experience">Experience</a><a href="#projects">Projects</a>
+  <a href="#hero">Home</a><a href="#about">About</a>
+  <a href="#experience">Experience</a><a href="#stack">Stack</a>
+  <a href="#projects">Projects</a>
   <a href="#certs">Certs</a><a href="#contact">Contact</a>
 </nav>
 
@@ -330,15 +274,63 @@ nav a:hover::after,nav a.active::after{transform:translateX(-50%) scaleX(1)}
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>View CV
       </a>
     </div>
-
   </div>
 </section>
-
-<div id="tech-strip" class="rev"><div class="mq-track" id="marquee"></div></div>
 
 <section id="about">
   <div class="sh rev"><span class="sh-sup">Who I Am</span><span class="sh-title">About</span></div>
   <div class="g about-p rev">I'm <span class="hl">Piyush Gupta</span>, a Data Engineer at <span class="hl">Accenture</span> building enterprise data solutions for a <span class="hl2">European banking client</span>. I work on high-volume financial datasets, implementing PL/SQL-based transformations and supporting production warehouse systems that drive business-critical reporting.<br><br>Beyond core data warehousing, I focus on scalable architectures, cloud ecosystems, and modern data platforms to design efficient and future-ready data systems.</div>
+</section>
+
+<section id="experience">
+  <div class="sh rev"><span class="sh-sup">Career Timeline</span><span class="sh-title">Experience</span></div>
+  <div class="exp-wrap">
+    <div class="exp-item" id="exp-1">
+      <div class="g exp-card">
+        <div class="exp-top">
+          <div class="exp-left">
+            <div class="exp-role">Associate Software Engineer</div>
+            <div class="exp-meta">
+              <div class="exp-co"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>Accenture</div>
+              <div class="exp-badge eb-ft">&#128188; Full-Time</div>
+              <div class="exp-badge eb-cur"><span class="bdot bdot-g"></span> Current</div>
+            </div>
+          </div>
+          <div class="exp-right"><div class="exp-date">Apr 2024 — Present</div><div class="exp-loc">&#128205; Pune, India</div></div>
+        </div>
+        <div class="exp-div"></div>
+        <ul class="exp-ul">
+          <li>Developed PL/SQL scripts processing millions of records daily for a European banking client, implementing complex business logic for contracts and account operations.</li>
+          <li>Delivered end-to-end data integration and transformation solutions, improving dataset accuracy and consistency across critical warehouse tables.</li>
+          <li>Implemented enterprise-grade PL/SQL solutions based on functional requirement documents, ensuring alignment with business rules and operational standards.</li>
+          <li>Managed production deployments, version control, and release management using Jenkins, Cloudbees, and Bitbucket, enabling reliable delivery of data assets.</li>
+          <li>Supported Data Warehouse development by implementing schema changes, validating transformations, and ensuring alignment with business and regulatory requirements.</li>
+        </ul>
+        <div class="exp-tags"><span class="exp-tag">Oracle PL/SQL</span><span class="exp-tag">Data Warehouse</span><span class="exp-tag">Jenkins</span><span class="exp-tag">Cloudbees</span><span class="exp-tag">Bitbucket</span><span class="exp-tag">Banking Domain</span></div>
+      </div>
+    </div>
+    <div class="exp-conn"></div>
+    <div class="exp-item" id="exp-2">
+      <div class="g exp-card">
+        <div class="exp-top">
+          <div class="exp-left">
+            <div class="exp-role">Software Engineer Intern</div>
+            <div class="exp-meta">
+              <div class="exp-co"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>KPIT Technologies</div>
+              <div class="exp-badge eb-int">&#128188; Internship</div>
+            </div>
+          </div>
+          <div class="exp-right"><div class="exp-date">Nov 2023 — Mar 2024</div><div class="exp-loc">&#128205; Pune, India</div></div>
+        </div>
+        <div class="exp-div"></div>
+        <ul class="exp-ul">
+          <li>Participated in intensive practical training, honing expertise in C and Modern C++ programming languages in an automotive technology environment.</li>
+          <li>Enhanced project success through precise test case creation and execution, meeting customer needs for top-notch product quality.</li>
+        </ul>
+        <div class="exp-tags"><span class="exp-tag">C</span><span class="exp-tag">C++</span><span class="exp-tag">Test Cases</span><span class="exp-tag">Automotive</span></div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section id="stack">
@@ -368,75 +360,24 @@ nav a:hover::after,nav a.active::after{transform:translateX(-50%) scaleX(1)}
   </div>
 </section>
 
-<section id="experience">
-  <div class="sh rev"><span class="sh-sup">Career Timeline</span><span class="sh-title">Experience</span></div>
-  <div class="exp-wrap">
-    <div class="exp-item" id="exp-1">
-      <div class="g exp-card">
-        <div class="exp-top">
-          <div class="exp-left">
-            <div class="exp-role">Associate Software Engineer</div>
-            <div class="exp-meta">
-              <div class="exp-co"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>Accenture</div>
-              <div class="exp-badge eb-ft">💼 Full-Time</div>
-              <div class="exp-badge eb-cur"><span class="bdot bdot-g"></span> Current</div>
-            </div>
-          </div>
-          <div class="exp-right"><div class="exp-date">Apr 2024 — Present</div><div class="exp-loc">📍 Pune, India</div></div>
-        </div>
-        <div class="exp-div"></div>
-        <ul class="exp-ul">
-          <li>Developed PL/SQL scripts processing millions of records daily for a European banking client, implementing complex business logic for contracts and account operations.</li>
-          <li>Delivered end-to-end data integration and transformation solutions, improving dataset accuracy and consistency across critical warehouse tables.</li>
-          <li>Implemented enterprise-grade PL/SQL solutions based on functional requirement documents, ensuring alignment with business rules and operational standards.</li>
-          <li>Managed production deployments, version control, and release management using Jenkins, Cloudbees, and Bitbucket, enabling reliable delivery of data assets.</li>
-          <li>Supported Data Warehouse development by implementing schema changes, validating transformations, and ensuring alignment with business and regulatory requirements.</li>
-        </ul>
-        <div class="exp-tags"><span class="exp-tag">Oracle PL/SQL</span><span class="exp-tag">Data Warehouse</span><span class="exp-tag">Jenkins</span><span class="exp-tag">Cloudbees</span><span class="exp-tag">Bitbucket</span><span class="exp-tag">Banking Domain</span></div>
-      </div>
-    </div>
-    <div class="exp-conn"></div>
-    <div class="exp-item" id="exp-2">
-      <div class="g exp-card">
-        <div class="exp-top">
-          <div class="exp-left">
-            <div class="exp-role">Software Engineer Intern</div>
-            <div class="exp-meta">
-              <div class="exp-co"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>KPIT Technologies</div>
-              <div class="exp-badge eb-int">💼 Internship</div>
-            </div>
-          </div>
-          <div class="exp-right"><div class="exp-date">Nov 2023 — Mar 2024</div><div class="exp-loc">📍 Pune, India</div></div>
-        </div>
-        <div class="exp-div"></div>
-        <ul class="exp-ul">
-          <li>Participated in intensive practical training, honing expertise in C and Modern C++ programming languages in an automotive technology environment.</li>
-          <li>Enhanced project success through precise test case creation and execution, meeting customer needs for top-notch product quality.</li>
-        </ul>
-        <div class="exp-tags"><span class="exp-tag">C</span><span class="exp-tag">C++</span><span class="exp-tag">Test Cases</span><span class="exp-tag">Automotive</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section id="projects">
   <div class="sh rev"><span class="sh-sup">What I've Built</span><span class="sh-title">Projects</span></div>
   <div class="proj-grid">
     <div class="g proj-card rev d1">
       <div>
-        <div class="proj-hdr"><div class="proj-ico">🏗️</div><div><div class="proj-name">Data Warehouse &amp; Analytics</div><div class="proj-meta">SQL Server · GitHub</div></div></div>
+        <div class="proj-hdr"><div class="proj-ico">&#127959;&#65039;</div><div><div class="proj-name">Data Warehouse &amp; Analytics</div><div class="proj-meta">SQL Server · GitHub</div></div></div>
         <p class="proj-desc">Built a consolidated SQL Server data warehouse integrating ERP and CRM datasets. Cleaned raw CSVs into optimized fact and dimension tables, then developed SQL queries delivering insights on customer behaviour, product performance, and sales trends.</p>
         <div class="proj-tags"><span class="proj-tag">SQL Server</span><span class="proj-tag">Data Warehouse</span><span class="proj-tag">ETL</span><span class="proj-tag">Fact &amp; Dim Tables</span><span class="proj-tag">ERP/CRM</span></div>
       </div>
-      <a href="https://github.com/piyushh-guptaa" class="proj-arr" target="_blank" rel="noopener">↗</a>
+      <a href="https://github.com/piyushh-guptaa" class="proj-arr" target="_blank" rel="noopener">&#8599;</a>
     </div>
     <div class="g proj-card rev d2">
       <div>
-        <div class="proj-hdr"><div class="proj-ico">📊</div><div><div class="proj-name">Data Analysis &amp; Dashboards</div><div class="proj-meta">Tableau · Excel</div></div></div>
+        <div class="proj-hdr"><div class="proj-ico">&#128202;</div><div><div class="proj-name">Data Analysis &amp; Dashboards</div><div class="proj-meta">Tableau · Excel</div></div></div>
         <p class="proj-desc">Performed in-depth analysis on diverse datasets using Tableau and Excel, uncovering actionable insights. Designed interactive dashboards and visual reports to facilitate data-driven decision-making and enhance business performance.</p>
         <div class="proj-tags"><span class="proj-tag">Tableau</span><span class="proj-tag">Excel</span><span class="proj-tag">Data Analysis</span><span class="proj-tag">Dashboards</span></div>
       </div>
-      <a href="#" class="proj-arr">↗</a>
+      <a href="#" class="proj-arr">&#8599;</a>
     </div>
   </div>
 </section>
@@ -444,20 +385,20 @@ nav a:hover::after,nav a.active::after{transform:translateX(-50%) scaleX(1)}
 <section id="certs">
   <div class="sh rev"><span class="sh-sup">Verified Credentials</span><span class="sh-title">Certifications</span></div>
   <div class="cert-grid">
-    <div class="g cert-card rev d1"><div class="cert-ico">🧱</div><div><div class="cert-name">Databricks Certified Data Engineer Associate</div><a href="https://www.databricks.com/learn/certification/data-engineer-associate" class="cert-arr" target="_blank" rel="noopener">↗</a><div class="cert-iss">Databricks</div></div></div>
-    <div class="g cert-card rev d2"><div class="cert-ico">☁️</div><div><div class="cert-name">AWS Certified Cloud Practitioner</div><a href="https://aws.amazon.com/certification/certified-cloud-practitioner/" class="cert-arr" target="_blank" rel="noopener">↗</a><div class="cert-iss">Amazon Web Services</div></div></div>
-    <div class="g cert-card rev d3"><div class="cert-ico">🤖</div><div><div class="cert-name">Azure AI Fundamentals (AI-900)</div><a href="https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-fundamentals/" class="cert-arr" target="_blank" rel="noopener">↗</a><div class="cert-iss">Microsoft</div></div></div>
-    <div class="g cert-card rev d4"><div class="cert-ico">🔴</div><div><div class="cert-name">Oracle Database SQL Certified Associate</div><a href="https://education.oracle.com/oracle-database-sql-certified-associate/trackp_457" class="cert-arr" target="_blank" rel="noopener">↗</a><div class="cert-iss">Oracle</div></div></div>
+    <div class="g cert-card rev d1"><div class="cert-ico">&#129395;</div><div><div class="cert-name">Databricks Certified Data Engineer Associate</div><a href="https://www.databricks.com/learn/certification/data-engineer-associate" class="cert-arr" target="_blank" rel="noopener">&#8599;</a><div class="cert-iss">Databricks</div></div></div>
+    <div class="g cert-card rev d2"><div class="cert-ico">&#9925;&#65039;</div><div><div class="cert-name">AWS Certified Cloud Practitioner</div><a href="https://aws.amazon.com/certification/certified-cloud-practitioner/" class="cert-arr" target="_blank" rel="noopener">&#8599;</a><div class="cert-iss">Amazon Web Services</div></div></div>
+    <div class="g cert-card rev d3"><div class="cert-ico">&#129302;</div><div><div class="cert-name">Azure AI Fundamentals (AI-900)</div><a href="https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-fundamentals/" class="cert-arr" target="_blank" rel="noopener">&#8599;</a><div class="cert-iss">Microsoft</div></div></div>
+    <div class="g cert-card rev d4"><div class="cert-ico">&#128308;</div><div><div class="cert-name">Oracle Database SQL Certified Associate</div><a href="https://education.oracle.com/oracle-database-sql-certified-associate/trackp_457" class="cert-arr" target="_blank" rel="noopener">&#8599;</a><div class="cert-iss">Oracle</div></div></div>
   </div>
   <div class="sh rev" style="margin-top:40px"><span class="sh-sup">Recognition</span><span class="sh-title">Awards</span></div>
   <div class="aw-wrap">
     <div class="g aw-card rev d1">
-      <div class="aw-ico">⭐</div>
-      <div><div class="aw-title">Star Award — Accenture Client</div><a href="#" class="aw-arr">↗</a><div class="aw-txt">Recipient of the Star Award from client for exceptional performance and commitment to excellence in delivery.</div></div>
+      <div class="aw-ico">&#11088;</div>
+      <div><div class="aw-title">Star Award — Accenture Client</div><a href="#" class="aw-arr">&#8599;</a><div class="aw-txt">Recipient of the Star Award from client for exceptional performance and commitment to excellence in delivery.</div></div>
     </div>
     <div class="g aw-card rev d2">
-      <div class="aw-ico">🏆</div>
-      <div><div class="aw-title">CBSE Merit Certificate &amp; Marker Cup — Top 0.1% Nationwide</div><a href="#" class="aw-arr">↗</a><div class="aw-txt">Recognised among the top 0.1% nationwide for scoring 100% in Informatics Practices (AISSCE 2019).</div></div>
+      <div class="aw-ico">&#127942;</div>
+      <div><div class="aw-title">CBSE Merit Certificate &amp; Marker Cup — Top 0.1% Nationwide</div><a href="#" class="aw-arr">&#8599;</a><div class="aw-txt">Recognised among the top 0.1% nationwide for scoring 100% in Informatics Practices (AISSCE 2019).</div></div>
     </div>
   </div>
   <div class="sh rev" style="margin-top:40px"><span class="sh-sup">Academic Background</span><span class="sh-title">Education</span></div>
@@ -465,8 +406,8 @@ nav a:hover::after,nav a.active::after{transform:translateX(-50%) scaleX(1)}
     <div class="edu-item" id="edu-1">
       <div class="g edu-card">
         <div class="edu-row">
-          <div class="edu-body"><div class="edu-deg">Bachelor of Technology</div><div class="edu-school">Lakshmi Narain College of Technology (LNCT)</div><div class="edu-grade"><span class="edu-badge eb-green">🎯 CGPA: 8.88 / 10</span></div></div>
-          <div class="edu-side"><div class="edu-date-pill">2019 – 2023</div><div class="edu-loc">📍 Bhopal, India</div></div>
+          <div class="edu-body"><div class="edu-deg">Bachelor of Technology</div><div class="edu-school">Lakshmi Narain College of Technology (LNCT)</div><div class="edu-grade"><span class="edu-badge eb-green">&#127919; CGPA: 8.88 / 10</span></div></div>
+          <div class="edu-side"><div class="edu-date-pill">2019 – 2023</div><div class="edu-loc">&#128205; Bhopal, India</div></div>
         </div>
       </div>
     </div>
@@ -474,8 +415,8 @@ nav a:hover::after,nav a.active::after{transform:translateX(-50%) scaleX(1)}
     <div class="edu-item" id="edu-2">
       <div class="g edu-card">
         <div class="edu-row">
-          <div class="edu-body"><div class="edu-deg">Senior Secondary (Class XII)</div><div class="edu-school">Delhi Public School (DPS), Bhopal</div><div class="edu-grade"><span class="edu-badge eb-green">🎯 Percentage: 83%</span></div></div>
-          <div class="edu-side"><div class="edu-date-pill">Passed 2019</div><div class="edu-loc">📍 Bhopal, India</div></div>
+          <div class="edu-body"><div class="edu-deg">Senior Secondary (Class XII)</div><div class="edu-school">Delhi Public School (DPS), Bhopal</div><div class="edu-grade"><span class="edu-badge eb-green">&#127919; Percentage: 83%</span></div></div>
+          <div class="edu-side"><div class="edu-date-pill">Passed 2019</div><div class="edu-loc">&#128205; Bhopal, India</div></div>
         </div>
       </div>
     </div>
@@ -498,7 +439,7 @@ nav a:hover::after,nav a.active::after{transform:translateX(-50%) scaleX(1)}
   </div>
 </section>
 
-<footer>© 2026 Piyush Gupta</footer>
+<footer>&#169; 2026 Piyush Gupta</footer>
 </main>
 
 <script>
@@ -508,7 +449,7 @@ if(cur){
   var mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;
   document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
   (function tick(){rx+=(mx-rx)*.11;ry+=(my-ry)*.11;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(tick)})();
-  document.querySelectorAll('a,button,.chip,.lc,.proj-card,.tl,.cert-card,.aw-card,.exp-card,.edu-card,.cl,.btn').forEach(function(el){
+  document.querySelectorAll('a,button,.chip,.lc,.proj-card,.cert-card,.aw-card,.exp-card,.edu-card,.cl,.btn').forEach(function(el){
     el.addEventListener('mouseenter',function(){ring.style.width='52px';ring.style.height='52px';ring.style.borderColor='rgba(100,180,255,.75)';cur.style.transform='translate(-50%,-50%) scale(.3)'});
     el.addEventListener('mouseleave',function(){ring.style.width='36px';ring.style.height='36px';ring.style.borderColor='rgba(100,180,255,.45)';cur.style.transform='translate(-50%,-50%) scale(1)'});
   });
@@ -522,9 +463,6 @@ P.prototype.step=function(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>
 P.prototype.draw=function(){cx2.beginPath();cx2.arc(this.x,this.y,this.r,0,Math.PI*2);cx2.fillStyle='rgba('+this.c+','+this.a+')';cx2.fill()};
 var pts=[];for(var k=0;k<80;k++)pts.push(new P());
 (function frame(){cx2.clearRect(0,0,W,H);for(var i=0;i<pts.length;i++){pts[i].step();pts[i].draw();for(var j=i+1;j<pts.length;j++){var dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<100){cx2.beginPath();cx2.moveTo(pts[i].x,pts[i].y);cx2.lineTo(pts[j].x,pts[j].y);cx2.strokeStyle='rgba(100,180,255,'+(0.04*(1-d/100))+')';cx2.lineWidth=.4;cx2.stroke()}}}requestAnimationFrame(frame)})();
-var techs=[{n:'Oracle DB',i:'🔴'},{n:'PL/SQL',i:'📋'},{n:'Databricks',i:'🧱'},{n:'AWS',i:'☁️'},{n:'Apache Spark',i:'⚡'},{n:'SQL Server',i:'🗄️'},{n:'Delta Lake',i:'△'},{n:'Jenkins',i:'⚙️'},{n:'Bitbucket',i:'🪣'},{n:'Python',i:'🐍'},{n:'Tableau',i:'📈'},{n:'Excel',i:'📊'},{n:'Git',i:'🌿'},{n:'MySQL',i:'🐬'},{n:'Cloudbees',i:'☁️'}];
-var track=document.getElementById('marquee');
-techs.concat(techs).forEach(function(t){var el=document.createElement('div');el.className='tl';el.innerHTML='<span class="ti">'+t.i+'</span><span class="tn">'+t.n+'</span>';track.appendChild(el)});
 var sprog=document.getElementById('sprog');
 window.addEventListener('scroll',function(){sprog.style.width=(scrollY/(document.body.scrollHeight-innerHeight)*100)+'%'},{passive:true});
 var navbar=document.getElementById('navbar');
