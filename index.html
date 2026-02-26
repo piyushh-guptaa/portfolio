@@ -135,7 +135,7 @@ section{margin-top:36px}
 .cert-card{padding:18px 20px;display:flex;align-items:flex-start;gap:11px;position:relative;opacity:0;transform:translateX(-24px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1),border-color .3s,box-shadow .3s}
 .cert-card.on{opacity:1;transform:translateX(0)}
 .cert-card:hover{border-color:rgba(52,211,153,.5);box-shadow:0 10px 36px rgba(52,211,153,.14);transform:translateX(6px) translateY(-1px)}
-.cert-ico{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.2)}
+.cert-ico{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:rgba(52,211,153,.06);border:1px solid rgba(52,211,153,.18)}
 .cert-name{font-size:12.5px;font-weight:500;color:var(--text);line-height:1.45;margin-bottom:2px}
 .cert-iss{font-size:10.5px;color:var(--muted)}
 .cert-arr{position:absolute;top:12px;right:14px;color:var(--muted);font-size:13px;text-decoration:none;transition:all .22s;opacity:.5;line-height:1}
@@ -327,10 +327,48 @@ footer{text-align:center;padding:44px 0 40px;font-size:11px;color:rgba(232,237,2
 <section id="certs">
   <div class="sh rev"><span class="sh-sup">Verified Credentials</span><span class="sh-title">Certifications</span></div>
   <div class="cert-grid">
-    <div class="g cert-card rev d1"><div class="cert-ico">&#129395;</div><div><div class="cert-name">Databricks Certified Data Engineer Associate</div><a href="https://credentials.databricks.com/fa1b6528-0f0c-45ab-9919-053b342a8b54#acc.Ecpyg7sT" class="cert-arr" target="_blank" rel="noopener">&#8599;</a><div class="cert-iss">Databricks</div></div></div>
-    <div class="g cert-card rev d2"><div class="cert-ico">&#9925;&#65039;</div><div><div class="cert-name">AWS Certified Cloud Practitioner</div><a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/f571a7eaa446458991304c4401ba21ab" class="cert-arr" target="_blank" rel="noopener">&#8599;</a><div class="cert-iss">Amazon Web Services</div></div></div>
-    <div class="g cert-card rev d3"><div class="cert-ico">&#129302;</div><div><div class="cert-name">Azure AI Fundamentals (AI-900)</div><a href="https://learn.microsoft.com/api/credentials/share/en-us/PiyushGupta-8314/39B737C8CF6B6A48?sharingId" class="cert-arr" target="_blank" rel="noopener">&#8599;</a><div class="cert-iss">Microsoft</div></div></div>
-    <div class="g cert-card rev d4"><div class="cert-ico">&#128308;</div><div><div class="cert-name">Oracle Database SQL Certified Associate</div><a href="https://drive.google.com/file/d/1-ETMaj__kDZKAEM1eBLJxDmL9yD8cRLK/view?usp=sharing" class="cert-arr" target="_blank" rel="noopener">&#8599;</a><div class="cert-iss">Oracle</div></div></div>
+    <div class="g cert-card rev d1">
+      <div class="cert-ico">
+        <svg viewBox="0 0 34 34" width="20" height="20" fill="none">
+          <path d="M17 2L31 10.5V23.5L17 32L3 23.5V10.5L17 2Z" fill="#FF3621" opacity=".9"/>
+          <path d="M9 14L17 9.5L25 14L17 18.5L9 14Z" fill="white" opacity=".95"/>
+          <path d="M3 10.5L17 18.5V32L3 23.5V10.5Z" fill="#C4251D"/>
+          <path d="M31 10.5L17 18.5V32L31 23.5V10.5Z" fill="#FF3621" opacity=".6"/>
+        </svg>
+      </div>
+      <div><div class="cert-name">Databricks Certified Data Engineer Associate</div><a href="https://credentials.databricks.com/fa1b6528-0f0c-45ab-9919-053b342a8b54#acc.Ecpyg7sT" class="cert-arr" target="_blank" rel="noopener">&#8599;</a><div class="cert-iss">Databricks</div></div>
+    </div>
+    <div class="g cert-card rev d2">
+      <div class="cert-ico">
+        <svg viewBox="0 0 34 34" width="20" height="20" fill="none">
+          <path d="M17 5C17 5 20.5 13 28 14.5C28 14.5 21 18.5 22.5 25C22.5 25 17 20.5 11.5 25C11.5 25 13 18.5 6 14.5C6 14.5 13.5 13 17 5Z" fill="#FF9900"/>
+          <path d="M5 22.5L7.5 20L10 22.5" stroke="#FF9900" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <path d="M29 22.5L26.5 20L24 22.5" stroke="#FF9900" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div><div class="cert-name">AWS Certified Cloud Practitioner</div><a href="https://cp.certmetrics.com/amazon/en/public/verify/credential/f571a7eaa446458991304c4401ba21ab" class="cert-arr" target="_blank" rel="noopener">&#8599;</a><div class="cert-iss">Amazon Web Services</div></div>
+    </div>
+    <div class="g cert-card rev d3">
+      <div class="cert-ico">
+        <svg viewBox="0 0 34 34" width="20" height="20" fill="none">
+          <rect x="2" y="2" width="13" height="13" rx="1.5" fill="#F25022"/>
+          <rect x="19" y="2" width="13" height="13" rx="1.5" fill="#7FBA00"/>
+          <rect x="2" y="19" width="13" height="13" rx="1.5" fill="#00A4EF"/>
+          <rect x="19" y="19" width="13" height="13" rx="1.5" fill="#FFB900"/>
+        </svg>
+      </div>
+      <div><div class="cert-name">Azure AI Fundamentals (AI-900)</div><a href="https://learn.microsoft.com/api/credentials/share/en-us/PiyushGupta-8314/39B737C8CF6B6A48?sharingId" class="cert-arr" target="_blank" rel="noopener">&#8599;</a><div class="cert-iss">Microsoft</div></div>
+    </div>
+    <div class="g cert-card rev d4">
+      <div class="cert-ico">
+        <svg viewBox="0 0 34 34" width="20" height="20" fill="none">
+          <ellipse cx="17" cy="10" rx="11" ry="5" stroke="#C74634" stroke-width="2" fill="#C74634" fill-opacity=".15"/>
+          <path d="M6 10V24C6 27.3 11 30 17 30C23 30 28 27.3 28 24V10" stroke="#C74634" stroke-width="2" fill="none"/>
+          <path d="M6 17C6 20.3 11 23 17 23C23 23 28 20.3 28 17" stroke="#C74634" stroke-width="1.5" fill="none" opacity=".55"/>
+        </svg>
+      </div>
+      <div><div class="cert-name">Oracle Database SQL Certified Associate</div><a href="https://drive.google.com/file/d/1-ETMaj__kDZKAEM1eBLJxDmL9yD8cRLK/view?usp=sharing" class="cert-arr" target="_blank" rel="noopener">&#8599;</a><div class="cert-iss">Oracle</div></div>
+    </div>
   </div>
   <div class="sh rev" style="margin-top:40px"><span class="sh-sup">Recognition</span><span class="sh-title">Awards</span></div>
   <div class="aw-wrap">
@@ -405,7 +443,8 @@ var edo=new IntersectionObserver(function(entries){entries.forEach(function(e){i
 document.querySelectorAll('.edu-item').forEach(function(el){edo.observe(el)});
 var co=new IntersectionObserver(function(entries){entries.forEach(function(e,i){if(e.isIntersecting){setTimeout(function(){e.target.classList.add('on')},i*80);co.unobserve(e.target)}})},{threshold:.05,rootMargin:'0px 0px 60px 0px'});
 document.querySelectorAll('.cert-card').forEach(function(el){co.observe(el)});
-setTimeout(function(){document.querySelectorAll('.rev,.exp-item,.edu-item,.cert-card,.sh-sup,.sh-title').forEach(function(el){el.classList.add('on')})},600);
+document.querySelectorAll('.rev,.exp-item,.edu-item,.cert-card,.sh-sup,.sh-title').forEach(function(el){el.classList.add('on')});
+setTimeout(function(){document.querySelectorAll('.rev,.exp-item,.edu-item,.cert-card,.sh-sup,.sh-title').forEach(function(el){el.classList.add('on')})},300);
 })();
 </script>
 </body>
